@@ -45,7 +45,9 @@ public class Runner extends Thread {
             }
             sleep(10);
         } catch (InterruptedException beg) {
+            System.out.println("Бегуну 1 берет палочку");
 
         }
+
     }
 }

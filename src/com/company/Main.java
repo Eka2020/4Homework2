@@ -20,9 +20,7 @@ public class Main {
                 runner.join();
             }
         } catch (Exception z) {
-            System.out.println("Завершение " + Thread.currentThread().getName());
         }
-        System.out.println("Бегуну 1 берет палочку");
         System.out.println("Завершение Эстафеты");
     }
 }
