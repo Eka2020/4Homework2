@@ -1,12 +1,24 @@
 package com.company;
 
 public class Runner extends Thread {
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_GREEN = "\u001B[36m";
+    public static final String ANSI_RED = "\u001B[31m";
+
     public Runner(String name) {
         super(name);
     }
-
     private int runnerBack;
     private int runnerNext;
+    private int number;
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
 
     public int getRunnerBack() {
         return runnerBack;
@@ -27,25 +39,25 @@ public class Runner extends Thread {
     @Override
     public void run() {
         try {
-            if (getRunnerBack() == 0) {
+            if (getNumber() == 0) {
                 if (getRunnerNext() == 6) {
-                    System.out.println(this.getName() + " берет палочку ");
-                    System.out.println(this.getName() + " бежит к" + " финишу");
+                    System.out.println(this.getName() + ANSI_RED + " берет палочку ");
+                    System.out.println(this.getName() + ANSI_GREEN + " бежит к" + " финишу");
                 } else {
-                    System.out.println(this.getName() + " берет палочку ");
-                    System.out.println(this.getName() + " бежит к" + " Бегуну " + getRunnerNext());
+                    System.out.println(this.getName() + ANSI_RED + " берет палочку ");
+                    System.out.println(this.getName() + ANSI_BLUE + " бежит к" + " Бегуну " + getRunnerNext());
                 }
             } else {
-                if (getRunnerNext() != 4) {
-                    System.out.println(this.getName() + " берет палочку ");
-                    System.out.println(this.getName() + " бежит к" + " Бегуну " + getRunnerNext());
+                if (getRunnerNext() < 4) {
+                    System.out.println(this.getName() + ANSI_RED + " берет палочку ");
+                    System.out.println(this.getName() + ANSI_BLUE +" бежит к" + " Бегуну " + getRunnerBack());
                 } else {
-                    System.out.println(this.getName() + " бежит к" + " Бегуну " + getRunnerNext());
+                    System.out.println(this.getName() + ANSI_BLUE +" бежит к" + " Бегуну " + getRunnerBack());
                 }
             }
-            sleep(10);
-        } catch (InterruptedException beg) {
-            System.out.println("Бегуну 1 берет палочку");
+            sleep(5000);
+            } catch (InterruptedException e) {
+
 
         }
 
