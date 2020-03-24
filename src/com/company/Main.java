@@ -8,7 +8,7 @@ public class Main {
     public static final String ANSI_YELLOW = "\u001B[33m";
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println(ANSI_YELLOW + "Запуск Эстафеты ");
+        System.out.println(ANSI_YELLOW + "Запуск Эстафеты "+"\n");
             for (int i = 1; i <= 5; i++) {
                 Runner runner = new Runner(ANSI_GREEN + "Бегун " + i);
                 runner.setRunnerNext(i + 1);
@@ -23,7 +23,7 @@ public class Main {
                 runnerBack.start();
                 runnerBack.join();
             }
-            System.out.println(ANSI_GREEN + "Бегун 1 берет палочку");
+            System.out.println(ANSI_GREEN + "Бегун 1 берет палочку"+"\n");
         System.out.println(ANSI_YELLOW + "Эстафета завершена!!");
     }
 }
